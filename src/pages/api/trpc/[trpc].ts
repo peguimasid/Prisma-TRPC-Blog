@@ -9,7 +9,7 @@ export const appRouter = t.router({
     .input(z.object({ text: z.string().nullish() }).nullish())
     .query(({ input }) => {
       return {
-        greeting: `hello ${input?.text ?? 'world'}`,
+        greeting: `Hello ${input?.text ?? 'world'}`,
       };
     }),
 });
