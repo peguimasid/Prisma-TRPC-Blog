@@ -4,10 +4,14 @@ import { z } from 'zod';
 
 export const t = initTRPC.create();
 
+const delay = async (time = 0) =>
+  new Promise((resolve) => setTimeout(resolve, time));
+
 export const appRouter = t.router({
   hello: t.procedure
     .input(z.object({ text: z.string().nullish() }).nullish())
-    .query(({ input }) => {
+    .query(async ({ input }) => {
+      await delay(3000);
       return {
         greeting: `Hello ${input?.text ?? 'world'}`,
       };
