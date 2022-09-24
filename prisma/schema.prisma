@@ -16,5 +16,4 @@ model Post {
   createdAt DateTime @default(now()) @db.Timestamp(6)
   content   String?
   published Boolean  @default(false)
-  authorId  Int
 }

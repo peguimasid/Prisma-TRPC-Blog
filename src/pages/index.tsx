@@ -3,7 +3,8 @@ import { trpc } from '../services/trpc';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
-  const hello = trpc.hello.byName.useQuery({ name: 'Guilhermo' });
+  const hello = trpc.hello.list.useQuery();
+  console.log(hello);
 
   if (hello.isLoading) {
     return <h1>Fetching...</h1>;
@@ -12,7 +13,11 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1>{hello.data?.greeting}</h1>
+        <ul>
+          {hello?.data?.map(({ id, content }) => (
+            <li key={id}>{content}</li>
+          ))}
+        </ul>
       </main>
     </div>
   );
