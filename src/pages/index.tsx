@@ -3,7 +3,7 @@ import { trpc } from '../services/trpc';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
-  const hello = trpc.hello.useQuery({ text: 'Guilhermo' });
+  const hello = trpc.hello.byName.useQuery({ name: 'Guilhermo' });
 
   if (hello.isLoading) {
     return <h1>Fetching...</h1>;
