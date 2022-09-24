@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   const hello = trpc.hello.list.useQuery();
-  console.log(hello);
 
   if (hello.isLoading) {
     return <h1>Fetching...</h1>;
