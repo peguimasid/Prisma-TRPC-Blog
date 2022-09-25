@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { trpc } from '../services/trpc';
+import { trpc } from '../utils/trpc';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <ul>
+        <ul className="bg-red-400">
           {posts?.map(({ id, content }) => (
             <li key={id}>{content}</li>
           ))}
