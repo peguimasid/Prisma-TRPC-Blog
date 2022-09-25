@@ -1,4 +1,4 @@
-import { prisma } from '../../server/prisma';
+import { prisma } from '@/server/prisma';
 import { z } from 'zod';
 import { t } from '../trpc';
 
