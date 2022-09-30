@@ -14,7 +14,7 @@ export const PostList = () => {
 
   return (
     <List className="w-full max-w-xl">
-      {data?.map(({ id, title, content, createdAt }) => (
+      {data?.map(({ id, title, content }) => (
         <Card key={id} color="purple" p="md" m="md" className="shadow-none">
           <Paragraph weight="bold" size="lg" color="blackLight">
             {title}
