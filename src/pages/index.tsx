@@ -3,8 +3,8 @@ import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div className="w-full h-full">
-      <main className="w-full h-full flex flex-row justify-center">
+    <div className="w-full h-full min-h-screen bg-dracula-darker">
+      <main className="w-full h-full flex justify-center">
         <PostList />
       </main>
     </div>

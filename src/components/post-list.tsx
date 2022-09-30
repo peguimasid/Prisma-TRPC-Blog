@@ -1,4 +1,5 @@
 import { trpc } from '@/utils/trpc';
+import { Card, Paragraph } from 'dracula-ui';
 
 export const PostList = () => {
   const { isLoading, data } = trpc.post.all.useQuery();
@@ -14,12 +15,10 @@ export const PostList = () => {
   return (
     <ul>
       {data?.map(({ id, title, content, createdAt }) => (
-        <li key={id}>
-          <div className="flex flex-col rounded-md cursor-pointer mt-10 bg-slate-100 hover:bg-slate-200 transition-colors">
-            <h1>{title}</h1>
-            <p>{content}</p>
-          </div>
-        </li>
+        <Card key={id} variant="subtle" color="pink" p="md" m="md">
+          <Paragraph color="blackLight">{title}</Paragraph>
+          <Paragraph color="blackSecondary">{content}</Paragraph>
+        </Card>
       ))}
     </ul>
   );
