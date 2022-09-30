@@ -1,10 +1,7 @@
 import { FunctionComponent } from 'react';
 import { trpc } from '@/utils/trpc';
 
-import { formatDistanceToNow } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
-
-import { Button, Card, List, Paragraph } from 'dracula-ui';
+import { List } from 'dracula-ui';
 import { PostCard } from './post-card';
 
 export const PostList: FunctionComponent = () => {
