@@ -1,9 +1,9 @@
-import { Prisma } from '@prisma/client';
+import { FunctionComponent } from 'react';
+
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 import { Button, Card, Paragraph } from 'dracula-ui';
-import { FunctionComponent } from 'react';
 
 type ICard = {
   id: number;
