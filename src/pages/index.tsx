@@ -5,10 +5,10 @@ import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div className="w-full h-full min-h-screen">
-      <main className="w-full flex flex-col items-center justify-center">
-        <div className="flex flex-col max-w-xl">
-          <div className="w-full flex justify-end mt-10 px-8">
+    <div className="h-full min-h-screen w-full">
+      <main className="flex w-full flex-col items-center justify-center">
+        <div className="flex max-w-xl flex-col">
+          <div className="mt-10 flex w-full justify-end px-8">
             <Link href="create-post">
               <a>Novo post</a>
             </Link>
