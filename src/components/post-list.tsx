@@ -16,7 +16,7 @@ export const PostList: FunctionComponent = () => {
   }
 
   return (
-    <List className="w-full max-w-xl">
+    <List className="w-full">
       {data?.map((post) => (
         <PostCard key={post.id} {...post} />
       ))}
