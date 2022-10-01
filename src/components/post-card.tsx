@@ -1,7 +1,7 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import { formatDistanceToNow } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 type ICard = {
   id: number;
@@ -17,17 +17,19 @@ export const PostCard: FunctionComponent<ICard> = ({
   createdAt,
 }) => {
   return (
-    <main>
-      <p>{title}</p>
-      <p>{content}</p>
-      <div>
-        <p>
+    <main className="space-y-5 rounded-md bg-slate-700 p-5 shadow-lg">
+      <h1 className="text-md font-semibold text-slate-100">{title}</h1>
+      <p className="text-xs font-light text-slate-400">{content}</p>
+      <div className="flex items-end justify-between">
+        <p className="text-xs text-slate-500">
           {formatDistanceToNow(new Date(createdAt), {
             locale: ptBR,
             addSuffix: true,
           })}
         </p>
-        <button>Ver mais</button>
+        <a className="cursor-pointer text-xs text-slate-400 transition-colors hover:text-slate-200">
+          Ver mais
+        </a>
       </div>
     </main>
   );
