@@ -15,8 +15,8 @@ export const PostList: FunctionComponent = () => {
   }
 
   return (
-    <ul className="w-full">
-      {data?.map(post => (
+    <ul className="w-full space-y-8">
+      {data?.map((post) => (
         <PostCard key={post.id} {...post} />
       ))}
     </ul>
