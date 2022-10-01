@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent } from "react";
 
-import { formatDistanceToNow } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 type ICard = {
   id: number;

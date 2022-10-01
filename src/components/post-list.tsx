@@ -1,7 +1,7 @@
-import { FunctionComponent } from "react";
-import { trpc } from "@/utils/trpc";
+import { FunctionComponent } from 'react';
+import { trpc } from '@/utils/trpc';
 
-import { PostCard } from "./post-card";
+import { PostCard } from './post-card';
 
 export const PostList: FunctionComponent = () => {
   const { isLoading, data } = trpc.post.all.useQuery();
@@ -16,7 +16,7 @@ export const PostList: FunctionComponent = () => {
 
   return (
     <ul className="w-full">
-      {data?.map((post) => (
+      {data?.map(post => (
         <PostCard key={post.id} {...post} />
       ))}
     </ul>
