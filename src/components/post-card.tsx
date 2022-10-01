@@ -19,7 +19,7 @@ export const PostCard: FunctionComponent<ICard> = ({
   createdAt,
 }) => {
   return (
-    <Card color="purple" p="md" m="md" className="shadow-none">
+    <Card color="purpleCyan" p="md" m="md" className="shadow-none">
       <Paragraph weight="bold" size="lg" color="blackLight">
         {title}
       </Paragraph>
@@ -27,7 +27,7 @@ export const PostCard: FunctionComponent<ICard> = ({
         {content}
       </Paragraph>
       <div className="flex w-full justify-between items-end">
-        <Paragraph size="xs" color="white" mt="sm">
+        <Paragraph size="xs" color="blackSecondary" mt="sm">
           {formatDistanceToNow(new Date(createdAt), {
             locale: ptBR,
             addSuffix: true,

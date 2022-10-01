@@ -1,5 +1,7 @@
+import { Button } from 'dracula-ui';
+
 const CreatePost = () => {
-  return <h1>Create post</h1>;
+  return <Button>Hello World</Button>;
 };
 
 export default CreatePost;
