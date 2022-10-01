@@ -1,9 +1,7 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent } from "react";
 
-import { formatDistanceToNow } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
-
-import { Button, Card, Paragraph } from 'dracula-ui';
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 type ICard = {
   id: number;
@@ -19,24 +17,18 @@ export const PostCard: FunctionComponent<ICard> = ({
   createdAt,
 }) => {
   return (
-    <Card color="purpleCyan" p="md" m="md" className="shadow-none">
-      <Paragraph weight="bold" size="lg" color="blackLight">
-        {title}
-      </Paragraph>
-      <Paragraph size="sm" color="blackSecondary" mt="sm">
-        {content}
-      </Paragraph>
-      <div className="flex w-full justify-between items-end">
-        <Paragraph size="xs" color="blackSecondary" mt="sm">
+    <main>
+      <p>{title}</p>
+      <p>{content}</p>
+      <div>
+        <p>
           {formatDistanceToNow(new Date(createdAt), {
             locale: ptBR,
             addSuffix: true,
           })}
-        </Paragraph>
-        <Button variant="outline" color="black" mt="md" ml="auto">
-          Ver mais
-        </Button>
+        </p>
+        <button>Ver mais</button>
       </div>
-    </Card>
+    </main>
   );
 };
