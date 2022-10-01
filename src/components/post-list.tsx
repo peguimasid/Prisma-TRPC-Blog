@@ -1,8 +1,7 @@
-import { FunctionComponent } from 'react';
-import { trpc } from '@/utils/trpc';
+import { FunctionComponent } from "react";
+import { trpc } from "@/utils/trpc";
 
-import { List } from 'dracula-ui';
-import { PostCard } from './post-card';
+import { PostCard } from "./post-card";
 
 export const PostList: FunctionComponent = () => {
   const { isLoading, data } = trpc.post.all.useQuery();
@@ -16,10 +15,10 @@ export const PostList: FunctionComponent = () => {
   }
 
   return (
-    <List className="w-full">
+    <ul className="w-full">
       {data?.map((post) => (
         <PostCard key={post.id} {...post} />
       ))}
-    </List>
+    </ul>
   );
 };
