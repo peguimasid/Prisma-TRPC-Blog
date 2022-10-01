@@ -22,13 +22,10 @@ export const PostCard: FunctionComponent<ICard> = ({
       <p className="text-xs font-light text-slate-400">{content}</p>
       <div className="flex items-end justify-between">
         <p className="text-xs text-slate-500">
-          {formatDistanceToNow(new Date(createdAt), {
-            locale: ptBR,
-            addSuffix: true,
-          })}
+          {formatDistanceToNow(createdAt, { locale: ptBR, addSuffix: true })}
         </p>
         <a className="cursor-pointer text-xs text-slate-400 transition-colors hover:text-slate-200">
-          Ver mais
+          Ler mais
         </a>
       </div>
     </main>
