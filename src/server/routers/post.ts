@@ -16,8 +16,8 @@ export const postRouter = t.router({
   create: t.procedure
     .input(z.object({ name: z.string() }))
     .output(z.object({ success: z.boolean() }))
-    .mutation(async () => {
-      console.log('ok', name);
+    .mutation(async ({ input }) => {
+      console.log('ok', input.name);
       return {
         success: true,
       };
