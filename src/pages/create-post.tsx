@@ -4,6 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { z } from 'zod';
+import { trpc } from '@/utils/trpc';
 
 const schema = z.object({
   name: z.string().min(1, { message: 'Please provide a name' }),
@@ -14,6 +15,8 @@ const defaultValues = {
 };
 
 const CreatePost = () => {
+  const mutation = trpc.post.create.useMutation();
+
   const { control, formState, handleSubmit } = useForm({
     mode: 'onChange',
     defaultValues,
@@ -22,9 +25,12 @@ const CreatePost = () => {
 
   const { errors, isValid } = formState;
 
-  const onSubmit = useCallback(({ name }: z.infer<typeof schema>) => {
-    console.log(name);
-  }, []);
+  const onSubmit = useCallback(
+    ({ name }: z.infer<typeof schema>) => {
+      mutation.mutate({ name });
+    },
+    [mutation]
+  );
 
   return (
     <main className="flex h-full min-h-screen w-full items-center justify-center bg-slate-800">
