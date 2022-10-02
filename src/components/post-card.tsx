@@ -24,7 +24,7 @@ export const PostCard: FunctionComponent<ICard> = ({
         <p className="text-xs text-slate-500">
           {formatDistanceToNow(createdAt, { locale: ptBR, addSuffix: true })}
         </p>
-        <a className="cursor-pointer text-xs text-slate-400 transition-colors hover:text-slate-200">
+        <a className="cursor-pointer rounded-lg bg-slate-600 py-2 px-3 text-xs text-slate-400 transition-all hover:opacity-70">
           Ler mais
         </a>
       </div>
