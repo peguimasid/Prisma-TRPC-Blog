@@ -1,5 +1,6 @@
 import { prisma } from '@/server/prisma';
 import { t } from '../trpc';
+import { z } from 'zod';
 
 export const postRouter = t.router({
   all: t.procedure.query(async () => {
@@ -12,4 +13,13 @@ export const postRouter = t.router({
       ...rest,
     }));
   }),
+  create: t.procedure
+    .input(z.object({ name: z.string() }))
+    .output(z.object({ success: z.boolean() }))
+    .mutation(async () => {
+      console.log('ok', name);
+      return {
+        success: true,
+      };
+    }),
 });
