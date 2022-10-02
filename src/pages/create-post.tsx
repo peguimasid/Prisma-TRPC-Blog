@@ -34,15 +34,12 @@ const CreatePost = () => {
 
   const { errors, isValid } = formState;
 
+  const onSuccess = () => Router.push('/');
+  const onError = () => alert('Algo deu errado, tente novamente');
+
   const onSubmit = useCallback(
     async ({ title, content }: z.infer<typeof schema>) => {
-      mutation.mutate(
-        { title, content },
-        {
-          onSuccess: () => Router.push('/'),
-          onError: () => alert('Algo deu errado, tente novamente'),
-        }
-      );
+      mutation.mutate({ title, content }, { onSuccess, onError });
     },
     [mutation]
   );
