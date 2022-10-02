@@ -14,12 +14,14 @@ export const postRouter = t.router({
     }));
   }),
   create: t.procedure
-    .input(z.object({ name: z.string() }))
-    .output(z.object({ success: z.boolean() }))
-    .mutation(async ({ input }) => {
-      console.log('ok', input.name);
-      return {
-        success: true,
-      };
+    .input(z.object({ title: z.string(), content: z.string() }))
+    .mutation(async ({ input: { title, content } }) => {
+      await prisma.post.create({
+        data: {
+          title,
+          content,
+          published: true,
+        },
+      });
     }),
 });
