@@ -9,7 +9,7 @@ export const postRouter = t.router({
       orderBy: { createdAt: 'desc' },
     });
     return posts.map(({ content, ...rest }) => ({
-      content: `${content?.substring(0, 300)}...`,
+      content: `${content?.substring(0, 450)}...`,
       ...rest,
     }));
   }),
