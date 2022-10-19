@@ -48,7 +48,7 @@ const CreatePost = () => {
     <main className="flex h-full min-h-screen w-full items-center justify-center bg-slate-900">
       <div className="flex h-full w-full flex-row items-center justify-center">
         <form
-          name="loginForm"
+          name="createPostForm"
           noValidate
           onSubmit={handleSubmit(onSubmit)}
           className="w-full max-w-lg"
