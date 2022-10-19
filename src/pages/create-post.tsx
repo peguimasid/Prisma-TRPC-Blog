@@ -45,13 +45,13 @@ const CreatePost = () => {
   );
 
   return (
-    <main className="flex h-full min-h-screen w-full items-center justify-center bg-slate-800">
+    <main className="flex h-full min-h-screen w-full items-center justify-center bg-slate-900">
       <div className="flex h-full w-full flex-row items-center justify-center">
         <form
           name="loginForm"
           noValidate
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-sm"
+          className="w-full max-w-lg"
         >
           <Controller
             name="title"
@@ -60,12 +60,12 @@ const CreatePost = () => {
               <div>
                 <input
                   {...field}
-                  className="w-full rounded-md bg-slate-600 py-2 px-5 text-sm leading-6 text-slate-300 shadow-sm ring-2 ring-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-md bg-slate-700 py-3 px-5 text-lg leading-6 text-slate-300 shadow-sm ring-2 ring-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   type="text"
                   disabled={mutation.isLoading}
                   placeholder="Título"
                 />
-                <p className="mt-1 text-xs font-light text-red-700">
+                <p className="mt-1 text-sm text-red-500">
                   {errors.title?.message}
                 </p>
               </div>
@@ -78,16 +78,16 @@ const CreatePost = () => {
               <div>
                 <textarea
                   {...field}
-                  className="mt-2 max-h-64 w-full rounded-md bg-slate-600 py-2 px-5 text-sm leading-6 text-slate-300 shadow-sm ring-2 ring-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="text-md mt-2 max-h-64 w-full rounded-md bg-slate-700 py-3 px-5 leading-6 text-slate-300 shadow-sm ring-2 ring-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   rows={5}
                   disabled={mutation.isLoading}
                   placeholder="Conteúdo"
                 />
                 <div className="flex flex-row justify-between">
-                  <p className="mt-1 text-xs font-light text-red-700">
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.content?.message}
                   </p>
-                  <p className="mt-1 text-xs font-light text-slate-400">
+                  <p className="mt-1 text-sm text-slate-400">
                     {field.value.length} de 5000
                   </p>
                 </div>
@@ -98,7 +98,7 @@ const CreatePost = () => {
           <button
             type="submit"
             disabled={mutation.isLoading || !isValid}
-            className="my-5 ml-auto w-full rounded-md bg-indigo-600 py-1 px-3 text-xs font-medium leading-6 text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-500 disabled:text-slate-200"
+            className="my-5 ml-auto w-full rounded-md bg-indigo-600 py-3 px-3 text-lg font-medium leading-6 text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-500 disabled:text-slate-200"
           >
             {mutation.isLoading ? 'Enviando...' : 'Criar'}
           </button>
